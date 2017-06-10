@@ -1,0 +1,114 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+html {
+    -webkit-user-select: none;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+@font-face {
+	font-family: 'trashhand';
+	src: url('../img/fonts/TrashHand.TTF') format('truetype');
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color: #FCFCFC;
+    background-attachment: fixed;
+    font-family: 'trashhand', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    width: 100%;
+    overflow: hidden;
+}
+
+#content {
+	position: absolute; 
+	top: 0; 
+	bottom: 0; 
+	width: 100%; 
+	-webkit-transform: translate3d(0, 0, 0);
+	overflow: hidden;
+}
+
+.whiteMask {
+	position: absolute; 
+	top: 0; 
+	bottom: 0; 
+	width: 100%;
+	background-color: white;
+	overflow: hidden;
+}
+
+.stage {
+	font-family: trashhand;
+	text-align:center;
+	
+	text-shadow: -2px -2px 0 #000;
+	position: absolute;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+}
+
+.stage.locked{
+	visibility: hidden;
+}
+
+.stage.completed {
+	opacity: 0.5;
+}
+
+.stage.completed::after {
+	display: block;
+	content: '';
+	background: url('../img/level/stageCompleted.png') no-repeat;
+	background-size: 100% 100%;
+	width: 50%;
+	height: 50%;
+	top: -40%;
+	left: 55%;
+	position: relative;
+}
+
+.stage.active:active,
+.stage.active:hover {
+	background: white;
+	color: #f1a165;
+}
+
+.stage,
+.stage.active[clicked="0"]:hover {
+	background: -webkit-linear-gradient(#f1a165, #f36d0a);
+	color: white;
+}
+
+.relativePosition {position: relative;}
+.absolutePosition {position: absolute;}
