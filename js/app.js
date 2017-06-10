@@ -16,44 +16,34 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-define(['i18n!nls/messages', 'levelSelection', 'memory', 'jquery', 'fastclick', 'jquery-ui'], function(messages, levelSelection, memory, $, FastClick){
+define(['context'], function(context){
 	
-	// private methods
-    
-    // Bind Event Listeners
-    var bindEvents = function() {
+	var bindEvents = function() {
         document.addEventListener('deviceready', onDeviceReady, false);
     },
     
-    // deviceready Event Handler
     onDeviceReady = function() {
     	document.addEventListener('backbutton', onBackButton, false);
         receivedEvent();
     },
-    // onBackButton Event Handler
+    
     onBackButton = function(){
-    	// Prompt the user with the choice
-    	navigator.notification.confirm(messages.confirmExit, onConfirmExit, messages.confirmDialogTitle, [messages.yes , messages.no]); 
+    	//navigator.notification.confirm(messages.confirmExit, onConfirmExit, messages.confirmDialogTitle, [messages.yes , messages.no]); 
     },
 
-    // confirmExit
     onConfirmExit = function(button) {
-    	// we quit the app if the user has pressed the 'yes' button
         if(button === 1){
             navigator.app.exitApp();
         }
     },
     
-    // Update DOM on a Received Event
     receivedEvent = function() {
-        new FastClick.attach(document.body);
-        
-        levelSelection.render('content');
-    };
-    
-    return {
-    	// Application Constructor
+        //levelSelection.render('content');
+    }
+	
+	return {
     	initialize: bindEvents
     };
+	
 });
 

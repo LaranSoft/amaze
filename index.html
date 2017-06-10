@@ -32,44 +32,13 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/level.css" />
-        <link rel="stylesheet" type="text/css" href="css/page.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="icon" href="img/logo.png" type="image/png" />
         <title>aMaze</title>
     </head>
     <body>
-        <div id="pageSelection" class="page panel">
-        	<div id="levelSelection">
-        		<div id="content"></div>
-        	</div>
-        </div>
-        <div id="pageLevel" class="page panel hidden">
-	        <div id="top">
-				<span id="mainMenuBtn" class="menuBtn"></span>
-				<span id="resetBtn" class="menuBtn"></span>
-				<span id="questionBtn" class="menuBtn last"></span>
-			</div>
-			<div id="middle"></div>
-			<div id="bottom">
-				<div id="credits"></div>
-				<div id="playBtn">Play</div>
-				<div id="undoBtn">Undo</div>
-				<div id="nextBtn">Avanti</div>
-			</div>
-		</div>
-		<div id="tutorialMask" class="panel hidden">
-			<div id="tutorialWrapper">
-				<div id="tutorialWrapperInner">
-					<div id="tutorialContainer"></div>
-					<div id="tutorialBtnContainer">
-						<div id="tutorialBtnWrapper">
-							<button id="tutorialBtn">Ok</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-        <script src="cordova.js"></script>
-        <script data-main="main" src="require.js"></script>
+        <div class="page"></div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script data-main="js/main" type="text/javascript" src="js/tp/require.js"></script>
     </body>
 </html>
